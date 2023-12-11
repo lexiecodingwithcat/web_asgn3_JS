@@ -132,9 +132,7 @@ footer{
     margin-left: 25px;
     margin-bottom: 50px;
 }
-.index .about-us{
-    margin: auto;
-}
+
 .index .about-us h2{
     line-height: 36px;
 }
@@ -146,8 +144,9 @@ footer{
 }
 .index a:first-child{
     margin-right: 150px;
+    margin-left: 150px;
 }
-/* the pair of fake-buttons will be centered on the page. */
+
 
 
 
