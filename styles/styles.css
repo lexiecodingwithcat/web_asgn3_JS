@@ -222,8 +222,7 @@ footer{
 .contact form input{
     width: 300px;
 }
-.contact form .flex{
-    align-items: center;
+.contact .flex{
     justify-content: center;
 }
 .contact textarea{
