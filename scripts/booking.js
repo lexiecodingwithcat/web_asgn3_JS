@@ -12,24 +12,31 @@ const halfBtn = document.getElementById("half");
 const wholeBtn  = document.getElementById("full");
 const calculated_cost = document.getElementById("calculated-cost");
 
+/********* calculate *********/
+// when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
+const calculate_cost = ()=>{
+    dayTotal = dayNum * dayCost;
+    calculated_cost.innerHTML = dayTotal;
+    // console.log(calculated_cost.innerHTML)
+};
 
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
-const clicked_button = (btn)=>{
-    if (btn.classList.contains("clicked") == false){
-        btn.classList.add("clicked");
-        dayNum += 1;
-        // console.log(dayNum)
-        calculate_cost();
-}};
+
 
 for (let i =0; i< allBtns.length; i++){
      let currentBtn = allBtns[i];
-        currentBtn.addEventListener("click", clicked_button(currentBtn));
-}
-
+     if (currentBtn.classList.contains("clicked") == false){
+        currentBtn.addEventListener("click", ()=>{
+        currentBtn.classList.add("clicked");
+        dayNum += 1;
+        // console.log(dayNum)
+        calculate_cost();
+    });
+}}
+    
 
 
 /********* clear days *********/
@@ -81,10 +88,4 @@ wholeBtn.addEventListener('click',whole_day_cost);
 
 
 
-/********* calculate *********/
-// when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
-const calculate_cost = ()=>{
-    dayTotal = dayNum * dayCost;
-    calculated_cost.innerHTML = dayTotal;
-    // console.log(calculated_cost.innerHTML)
-};
+
